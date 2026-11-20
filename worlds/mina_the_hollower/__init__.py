@@ -207,6 +207,7 @@ class MinaTheHollowerWorld(MinaTheHollowerBase):
             "broken_generators" : self.broken_generators,
             # "entrance_rando" : self.options.entrance_rando.value,
             "death_link": self.options.death_link.value,
+            "merciless_deathlink": self.options.merciless_deathlink.value,
             # The client disables each ability while its "*_rando" key is nonzero.
             **{
                 slot_key: int(option_key in ability_rando)

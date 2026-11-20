@@ -71,6 +71,7 @@ See our [Features roadmap](roadmap.md) for planned additions
 
 ### Deathlink
 - Sends a DeathLink every time you die a sparkless death.
+- With Merciless Death Link on, every death sends one.
 
 ## Acknowledgements
 Big shout out to everyone who [contributed](contributers.md)
