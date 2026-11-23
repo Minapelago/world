@@ -7,7 +7,7 @@ from ..data.locations import all_collectables
 from ..data.locations.areas import loners_landing
 
 
-def test_all_locations(base):
+def check_all_locations(base):
     world_location_names = {location.name for location in base.world.get_locations()}
 
     for location in all_collectables:
@@ -28,7 +28,7 @@ class TestCollectablesNoOssexStart(MinaTestBase):
     }
 
     def test_all_locations_loaded(self):
-        test_all_locations(self)
+        check_all_locations(self)
 
 
 class TestCollectablesOssexStart(MinaTestBase):
@@ -38,4 +38,4 @@ class TestCollectablesOssexStart(MinaTestBase):
     }
 
     def test_all_locations_loaded(self):
-        test_all_locations(self)
+        check_all_locations(self)
