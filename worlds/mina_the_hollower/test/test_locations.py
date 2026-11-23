@@ -23,7 +23,7 @@ def check_all_locations(base):
 
 class TestCollectablesNoOssexStart(MinaTestBase):
     options = {
-        "Abilty Rando": [],
+        "Ability Rando": [],
         "goal": "radiantManorGenerator"
     }
 

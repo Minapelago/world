@@ -93,7 +93,7 @@ class AbilityRando(OptionSet):
     - **Spring** - The ability to be launched by springboards.
     - **Carry** - The ability to carry objects.
     """
-    display_name = "Abilty Rando"
+    display_name = "Ability Rando"
     default = ["Swim", "Climb", "Bounce", "Carry", "Spring"]
     valid_keys = ["Burrow", "Swim", "Climb", "Bounce", "Carry", "Spring"]
 
