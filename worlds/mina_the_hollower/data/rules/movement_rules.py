@@ -134,7 +134,7 @@ exclusive_movements = [
 EXCLUSIVE_ITEMS = {
     item
     for item, _ in exclusive_movements
-}
+} - {Abilities.SWIM}
 
 
 def is_valid_loadout(loadout):
