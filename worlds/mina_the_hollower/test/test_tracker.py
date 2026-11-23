@@ -6,7 +6,7 @@ from worlds.mina_the_hollower.data.locations import all_collectables
 from worlds.mina_the_hollower.test.bases import MinaTestBase
 
 
-def test_all_collectables_have_sections(base):
+def check_all_collectables_have_sections(base):
     locations_folder = Path(__file__).parent.parent / "tracker" / "locations"
     all_section_names = set()
 
@@ -38,7 +38,7 @@ def test_all_collectables_have_sections(base):
                      f"Found {len(missing_collectables)} collectable keys without matching section names")
 
 
-def test_all_map_names_exist(base):
+def check_all_map_names_exist(base):
     maps_folder = Path(__file__).parent.parent / "tracker" / "maps"
     maps_file = maps_folder / "maps.json"
 
@@ -82,11 +82,11 @@ class TestCollectablesHaveSections(MinaTestBase):
     """Test that all collectable keys have matching section names in location files."""
 
     def test_collectables_have_matching_sections(self):
-        test_all_collectables_have_sections(self)
+        check_all_collectables_have_sections(self)
 
 
 class TestMapNamesExist(MinaTestBase):
     """Test that all map names referenced in locations exist in maps.json."""
 
     def test_map_names_in_maps_json(self):
-        test_all_map_names_exist(self)
+        check_all_map_names_exist(self)
