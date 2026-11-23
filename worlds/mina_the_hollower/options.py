@@ -162,6 +162,11 @@ class DeathLink(Toggle):
     display_name = "Death Link"
     rich_text_doc = True
 
+class MercilessDeathLink(Toggle):
+    """Every death sends a death link, even with sparks left. Has no effect unless Death Link is on."""
+    display_name = "Merciless Death Link"
+    rich_text_doc = True
+
 class TrapPercentage(Range):
     """
     What percentage of filler do you want replaced with traps?
@@ -197,7 +202,8 @@ class TrapWeights(OptionCounter):
 
 mina_the_hollower_option_groups= [
     OptionGroup("Game Options", [
-        DeathLink
+        DeathLink,
+        MercilessDeathLink,
     ]),
     OptionGroup("Goal Options", [
         Goal,
@@ -236,6 +242,7 @@ class MinaTheHollowerOptions(PerGameCommonOptions):
     kear_rando: KearRandomization
     astral_switches: RandomizeAstralSwitches
     death_link: DeathLink
+    merciless_deathlink: MercilessDeathLink
     trap_percent: TrapPercentage
     trap_weights: TrapWeights
     # shuffled_sidearms: ShuffledSidearms
