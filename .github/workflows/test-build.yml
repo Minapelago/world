@@ -24,7 +24,7 @@ jobs:
       - uses: Eijebong/ap-actions/ap-tests@main
         with:
           apworld-path: worlds/mina_the_hollower
-          ap-version: '0.6.7'
+          ap-version: '0.6.8'
           python-version: '3.12'
 
       - name: Build APWorld
@@ -35,11 +35,6 @@ jobs:
       - name: Generate Template
         run: |
           python Launcher.py "Generate Template Options"
-
-      - name: Fix template AP version
-        run: |
-          sed -i '0,/version: 0\.6\.8/s//version: 0.6.7/' \
-            "Players/Templates/Mina The Hollower.yaml"
 
       - name: Upload APWorld
         uses: actions/upload-artifact@v4
