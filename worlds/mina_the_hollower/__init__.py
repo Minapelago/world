@@ -18,7 +18,7 @@ from ..AutoWorld import WebWorld
 from . import items, locations, tracker
 from .constants import *
 from .data import get_target_groups
-from .data.items import all_filler_items, all_items, Traps
+from .data.items import all_filler_items, all_items, Traps, Abilities
 from .data.locations import all_locations
 from .items import MinaTheHollowerItem
 from .options import ABILITY_RANDO_SLOT_KEYS, mina_the_hollower_option_groups, Goal
@@ -149,7 +149,10 @@ class MinaTheHollowerWorld(MinaTheHollowerBase):
 
         self.ossex_start = len(self.options.ability_rando.value) != 0
 
-
+        # Vanilla Kear locks need every Kear, and without Burrow too few locations are open to hold them.
+        if (Abilities.BURROW.value in self.options.ability_rando.value
+                and self.options.kear_rando.value == self.options.kear_rando.option_vanilla):
+            self.multiworld.early_items[self.player].setdefault(Abilities.BURROW.value, 1)
 
 
     def create_regions(self):
