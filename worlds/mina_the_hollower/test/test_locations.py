@@ -12,18 +12,13 @@ def check_all_locations(base):
 
     for location in all_collectables:
         base.assertIn(location.value, world_location_names)
-    if base.world.ossex_start:
-        base.assertNotIn(loners_landing.OptionalLocations.LL_CAPTAINS_GIFT.value, world_location_names)
-        base.assertNotIn(loners_landing.OptionalLocations.LL_HULK_TROOPER.value, world_location_names)
-        base.assertNotIn(loners_landing.OptionalLocations.LL_THORNE_1.value, world_location_names)
-    else:
-        base.assertIn(loners_landing.OptionalLocations.LL_CAPTAINS_GIFT.value, world_location_names)
-        base.assertNotIn(loners_landing.OptionalLocations.LL_HULK_TROOPER.value, world_location_names)
-        base.assertNotIn(loners_landing.OptionalLocations.LL_THORNE_1.value, world_location_names)
+    # Optional locations are never created, whichever start the player gets.
+    for location in loners_landing.OptionalLocations:
+        base.assertNotIn(location.value, world_location_names)
 
 class TestCollectablesNoOssexStart(MinaTestBase):
     options = {
-        "Ability Rando": [],
+        "ability_rando": [],
         "goal": "radiantManorGenerator"
     }
 
@@ -33,7 +28,7 @@ class TestCollectablesNoOssexStart(MinaTestBase):
 
 class TestCollectablesOssexStart(MinaTestBase):
     options = {
-        "Abilty Rando": [],
+        "ability_rando": ["Swim"],
         "goal": "radiantManorGenerator",
     }
 
